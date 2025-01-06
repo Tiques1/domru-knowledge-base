@@ -10,6 +10,7 @@
       "bss": "check link and mac bss",
       "crm": "check link and mac crm",
       "eqm": "check link and mac eqm"
-    }
+    },
+    "type": "ourSelf"
   }
 }

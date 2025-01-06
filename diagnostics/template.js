@@ -1,3 +1,15 @@
+document.getElementsByClassName("history-btn")[0].onclick = function () {
+  const elem = document.getElementById("historyDiv");
+  const btn = document.getElementsByClassName("history-btn");
+  if (elem.classList.contains("hidden")) {
+    elem.classList.remove("hidden");
+    btn[0].classList.add("rotate");
+  } else {
+    document.getElementById("historyDiv").classList.add("hidden");
+    btn[0].classList.remove("rotate");
+  }
+};
+
 const diagnostics = "./diagnostics/";
 const instructions = "./instructions/";
 

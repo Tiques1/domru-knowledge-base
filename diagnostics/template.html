@@ -13,10 +13,14 @@
   </head>
 
   <body>
+    <div id="leftPanel">
+      <span>Информация о клиенте</span>
+    </div>
+
     <div id="mainDiv">
       <h1 id="title" style="display: inline-block">Проверка линка и мака</h1>
 
-      <ul class="nextStepList withClient">
+      <ul class="nextStepList">
         <li data-content="no link.html" class="optionItem">Нет линка</li>
         <li data-content="no link.html" class="optionItem">
           Линк есть, нет мака
@@ -32,7 +36,8 @@
       <div id="content-container"></div>
     </div>
 
-    <div id="historyDiv" style="display: block">
+    <button class="history-btn rotate"></button>
+    <div id="historyDiv">
       <p>История</p>
       <ul id="historyList" class="ulHistory" style="list-style-type: decimal">
         <li data-file="link.html" data-option="1">Нет линка</li>
