@@ -1,0 +1,15 @@
+{
+  "no session": {
+    "h1": "Проверка линка и мака",
+    "options": {
+      "Нет линка": "no link",
+      "Линк есть, нет мака": "no link mac",
+      "Линк и мак есть": "link mac"
+    },
+    "instructions": {
+      "bss": "check link and mac bss",
+      "crm": "check link and mac crm",
+      "eqm": "check link and mac eqm"
+    }
+  }
+}

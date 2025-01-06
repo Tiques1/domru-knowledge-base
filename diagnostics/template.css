@@ -1,0 +1,102 @@
+:root {
+  font-size: 1.2rem;
+  font-family: nunito;
+}
+
+body {
+  background-color: white;
+  margin-left: 2%;
+  margin-top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h1 {
+  margin-left: 7%;
+  border-bottom: 2px solid black;
+  width: 68%;
+}
+
+#mainDiv {
+  border-right: 2px solid black;
+  flex-grow: 5;
+}
+
+/* Варианты выбора */
+
+.nextStepList {
+  margin-left: 25%;
+  margin-right: 25%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  list-style: none;
+  padding: 0.1em;
+}
+
+.nextStepList li {
+  border: 4px solid;
+  border-radius: 7px;
+  padding: 10px;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.withClient li {
+  border-color: blue;
+}
+
+.ourSelf li {
+  border-color: grey;
+}
+
+li:hover {
+  background-color: rgb(195, 195, 195);
+  transition-duration: 100ms;
+  cursor: pointer;
+}
+
+/* Выбор инструкций */
+
+.instructionsList li {
+  display: inline-block;
+  border-right: 1px solid black;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.instructionsList li:last-child {
+  border-right: 0px;
+}
+
+.instructionsList {
+  border-bottom: 1px solid black;
+  margin-right: 70%;
+}
+
+.instructionsList li:hover {
+  cursor: pointer;
+  background-color: rgb(180, 10, 10);
+}
+
+/* Блок с историей действий */
+
+#historyDiv {
+  flex-grow: 1;
+}
+
+#historyDiv ul {
+  list-style-position: inside;
+  padding: 0;
+  margin: 0;
+}
+
+#historyDiv li {
+  border: 3px solid green;
+  margin-bottom: 5px;
+}
+
+#historyDiv p {
+  margin-left: 25%;
+  margin-right: 25%;
+}
