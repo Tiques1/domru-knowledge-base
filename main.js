@@ -1,5 +1,3 @@
-document.getElementById("searchButton").addEventListener("click", inputCheck);
-
 var counter = 0;
 const phrases = [
   "Введите запрос",
@@ -12,27 +10,42 @@ const phrases = [
   "Иди нахуй",
 ];
 
-document
-  .getElementById("mainSearch")
-  .addEventListener("keydown", (e) => inputCheck(e));
+document.getElementById("searchButton").addEventListener("click", inputCheck);
 
-function inputCheck(e) {
+document.getElementById("mainSearch").addEventListener("keydown", function (e) {
+  if (e.code === "Enter") {
+    inputCheck();
+  }
+});
+
+function inputCheck() {
   var inp = document.getElementById("input");
 
-  if (inp.value === "") {
+  if (inp.value != "") {
+    var ul = document.getElementById("list");
+    var li = document.createElement("li");
+    li.textContent = "Hello";
+    ul.appendChild(li);
+    return;
+  } else {
     inp.setAttribute("placeholder", phrases[counter]);
     if (0 <= counter && counter < phrases.length - 1) {
       counter += 1;
     } else {
       counter = 0;
     }
-    return;
-  }
-
-  if (e.code === "Enter") {
-    var ul = document.getElementById("list");
-    var li = document.createElement("li");
-    li.textContent = "Hello";
-    ul.appendChild(li);
   }
 }
+
+fetch("./problems.json")
+  .then((response) => response.text())
+  .then((json) => {
+    Object.keys(JSON.parse(json)).forEach(function (elem) {
+      const li = document.createElement("li");
+      li.textContent = `${elem}`;
+      document.getElementById("list").appendChild(li);
+    });
+  })
+  .catch((error) => {
+    console.error("Ошибка загрузки контента:", error);
+  });
