@@ -1,3 +1,5 @@
+/* Немного рофлов, а также обработчик запроса */
+
 var counter = 0;
 const phrases = [
   "Введите запрос",
@@ -37,15 +39,46 @@ function inputCheck() {
   }
 }
 
+/* Подгрузка первичных вариантов из json файла */
+// Доделать замену контента
+
 fetch("./problems.json")
   .then((response) => response.text())
   .then((json) => {
     Object.keys(JSON.parse(json)).forEach(function (elem) {
       const li = document.createElement("li");
+      li.setAttribute("class", "primary-option");
       li.textContent = `${elem}`;
       document.getElementById("list").appendChild(li);
+      li.addEventListener("click", () => {
+        fetch("./diagnostics/diagnostics.json")
+          .then((response) => response.text())
+          .then((json) => {
+            console.log(JSON.parse(json)[li.textContent]);
+          })
+          .catch((error) => {
+            console.error("Ошибка загрузки контента:", error);
+          });
+      });
     });
   })
   .catch((error) => {
     console.error("Ошибка загрузки контента:", error);
   });
+
+/* Далее идет  блок с заменой контента по нажатию на вариант из списка*/
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   [...document.querySelectorAll(".primary-option")].forEach((el) =>
+//     el.addEventListener("click", (e) => {
+//       fetch("./diagnostics/diagnostics.json")
+//         .then((response) => response.text())
+//         .then((json) => {
+//           //console.log(JSON.parse(json).Интернет);
+//         })
+//         .catch((error) => {
+//           console.error("Ошибка загрузки контента:", error);
+//         });
+//     })
+//   );
+// });

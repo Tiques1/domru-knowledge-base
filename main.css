@@ -1,3 +1,8 @@
+:root {
+  font-size: 1.2rem;
+  font-family: nunito;
+}
+
 body {
   background-color: rgb(240, 224, 193);
 }
