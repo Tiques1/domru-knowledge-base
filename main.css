@@ -1,0 +1,62 @@
+body {
+  background-color: rgb(240, 224, 193);
+}
+
+div {
+  display: flex;
+  gap: 10px;
+  margin-top: 5%;
+  margin-right: 15%;
+  margin-left: 15%;
+}
+
+#mainSearch {
+  flex-grow: 5;
+  justify-content: space-between;
+}
+
+#mainSearch input {
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid black;
+  height: 50px;
+  font-size: 1.4em;
+}
+
+#searchButton {
+  border: 2px none black;
+  border-radius: 5px;
+  width: 55px;
+  height: 55px;
+  background-image: url("./resources/loopa.png");
+  background-size: cover;
+  background-color: transparent;
+}
+
+#searchButton:hover {
+  filter: invert(1);
+}
+
+ul {
+  border-radius: 10px;
+  margin-bottom: 20px;
+  list-style: none;
+  padding: 0.1em;
+  margin-right: 15%;
+  margin-left: 15%;
+  margin-top: 40px;
+}
+
+ul li {
+  border: 2px solid black;
+  border-radius: 7px;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+}
+
+li:hover {
+  background-color: rgb(195, 195, 195);
+  transition-duration: 100ms;
+  cursor: pointer;
+}
