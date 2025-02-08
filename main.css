@@ -7,7 +7,7 @@ body {
   background-color: rgb(240, 224, 193);
 }
 
-div {
+#search {
   display: flex;
   gap: 10px;
   margin-top: 5%;
@@ -64,4 +64,63 @@ li:hover {
   background-color: rgb(195, 195, 195);
   transition-duration: 100ms;
   cursor: pointer;
+}
+
+#mainDiv {
+  display: flex;
+  gap: 10px;
+}
+
+#center {
+  flex-grow: 5;
+  justify-content: space-between;
+}
+
+/* История */
+
+.history-btn {
+  width: 40px;
+  height: 40px;
+  transform: translateX(-100%);
+  background-image: url("./resources/arrow.png");
+  background-size: cover;
+  transform: scale(-1, 1);
+}
+
+.hidden {
+  display: none;
+}
+
+#historyDiv ul {
+  list-style-position: inside;
+  padding: 0;
+  margin: 0;
+}
+
+#historyDiv li {
+  border: 2px solid blue;
+  margin-bottom: 0;
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+#historyDiv li:not(:last-child) {
+  border-bottom: 0;
+}
+
+.rotate {
+  transform: scale(1, -1);
+}
+
+#historyDiv {
+  max-width: 20%;
+  word-break: break-all;
+  background-color: white;
+  border: 3px solid green;
+}
+
+#historyDiv p {
+  padding-left: 25%;
+  margin-top: 7%;
 }

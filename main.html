@@ -12,15 +12,29 @@
   </head>
 
   <body>
-    <link rel="stylesheet" href="./main.css" />
-    <div>
-      <search id="mainSearch">
-        <input type="text" placeholder="Какая проблема?" id="input" />
-      </search>
-      <button id="searchButton"></button>
-    </div>
+    <div id="mainDiv">
+      <link rel="stylesheet" href="./main.css" />
+      <div id="center">
+        <div id="search">
+          <search id="mainSearch">
+            <input type="text" placeholder="Какая проблема?" id="input" />
+          </search>
+          <button id="searchButton"></button>
+        </div>
 
-    <ul id="list"></ul>
+        <ul id="list"></ul>
+      </div>
+
+      <button class="history-btn rotate"></button>
+
+      <div id="historyDiv">
+        <p>История</p>
+        <ul id="historyList" class="ulHistory" style="list-style-type: decimal">
+          <li data-file="link.html" data-option="1">Нет линка</li>
+          <li data-file="link.html" data-option="1">Нет линка</li>
+        </ul>
+      </div>
+    </div>
   </body>
 
   <script src="./main.js"></script>
