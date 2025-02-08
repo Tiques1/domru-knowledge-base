@@ -30,7 +30,7 @@
         <button class="clock selector" data-sidebar="clock"></button>
       </div>
 
-      <div id="historyDiv" class="sidebar">
+      <div id="historyDiv" class="sidebar hidden">
         <p>История</p>
         <ul id="historyList" class="ulHistory" style="list-style-type: decimal">
           <li data-file="link.html" data-option="1">Нет линка</li>
@@ -38,7 +38,14 @@
         </ul>
       </div>
 
-      <div id="clock" class="sidebar"></div>
+      <div id="clock" class="sidebar hidden">
+        <div class="time" date-time-zone="3" date-city="Москва"></div>
+        <div
+          class="time"
+          date-time-zone="5"
+          date-city="Челябинск (МСК+2)"
+        ></div>
+      </div>
     </div>
   </body>
 

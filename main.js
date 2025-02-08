@@ -117,15 +117,23 @@ document.querySelectorAll("#buttons button").forEach((el) =>
 
 function digitalClock() {
   var date = new Date();
-  var hours = date.getHours();
+  var hours = date.getHours() + date.getTimezoneOffset() / 60;
   var minutes = date.getMinutes();
   var seconds = date.getSeconds();
   //* добавление ведущих нулей */
   if (hours < 10) hours = "0" + hours;
   if (minutes < 10) minutes = "0" + minutes;
   if (seconds < 10) seconds = "0" + seconds;
-  document.getElementById("clock").innerHTML =
-    hours + ":" + minutes + ":" + seconds;
+  document.querySelectorAll(".time").forEach((el) => {
+    el.textContent =
+      el.getAttribute("date-city") +
+      "\n" +
+      (Number(hours) + Number(el.getAttribute("date-time-zone"))).toString() +
+      ":" +
+      minutes +
+      ":" +
+      seconds;
+  });
   setTimeout("digitalClock()", 1000);
 }
 
