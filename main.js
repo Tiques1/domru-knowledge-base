@@ -44,22 +44,53 @@ function inputCheck() {
 
 fetch("./problems.json")
   .then((response) => response.text())
-  .then((json) => {
-    Object.keys(JSON.parse(json)).forEach(function (elem) {
+  .then((text) => {
+    var json = JSON.parse(text);
+    Object.keys(json).forEach(function (elem) {
       const li = document.createElement("li");
       li.setAttribute("class", "primary-option");
       li.textContent = `${elem}`;
       document.getElementById("list").appendChild(li);
+
       li.addEventListener("click", () => {
-        fetch("./diagnostics/diagnostics.json")
-          .then((response) => response.text())
-          .then((json) => {
-            console.log(JSON.parse(json)[li.textContent]);
-          })
-          .catch((error) => {
-            console.error("Ошибка загрузки контента:", error);
-          });
+        var center = document.getElementById("center");
+
+        const nextStepList = document.createElement("ul");
+        nextStepList.classList.add("nextStepList");
+
+        const instructionsList = document.createElement("ul");
+        instructionsList.classList.add("instructionsList");
+
+        json[li.textContent]["Варианты"].forEach((opt) => {
+          const optionItem = document.createElement("li");
+          optionItem.classList.add("optionItem");
+          optionItem.textContent = opt;
+
+          nextStepList.appendChild(optionItem);
+        });
+
+        json[li.textContent]["Инструкции"].forEach((inst) => {
+          const instructionsItem = document.createElement("li");
+          instructionsItem.textContent = inst;
+
+          instructionsList.appendChild(instructionsItem);
+        });
+
+        center.innerHTML = null;
+        center.appendChild(nextStepList);
+        center.appendChild(instructionsList);
       });
+
+      //   li.addEventListener("click", () => {
+      //     fetch("./diagnostics/diagnostics.json")
+      //       .then((response) => response.text())
+      //       .then((json) => {
+      //         console.log(JSON.parse(json)[li.textContent]);
+      //       })
+      //       .catch((error) => {
+      //         console.error("Ошибка загрузки контента:", error);
+      //       });
+      //   });
     });
   })
   .catch((error) => {
@@ -138,3 +169,20 @@ function digitalClock() {
 }
 
 digitalClock();
+
+/* Замена центра на диагностику */
+
+// document.querySelectorAll("#list li").forEach((el) => {
+//   el.addEventListener("click", (e) => {
+//     var center = document.getElementById("center");
+
+//     fetch("./template.html")
+//       .then((response) => response.text())
+//       .then((html) => {
+//         center.innerHTML = html;
+//       })
+//       .catch((error) => {
+//         console.error("Ошибка загрузки контента:", error);
+//       });
+//   });
+// });
