@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-size: 1.2rem;
   font-family: nunito;
   --options-border-color: blue;
@@ -11,7 +11,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   overflow-x: hidden;
-}
+} */
 
 h1 {
   margin-left: 7%;
@@ -21,7 +21,6 @@ h1 {
 
 #mainDiv {
   border-right: 2px solid black;
-  flex-grow: 5;
 }
 
 /* Варианты выбора */
@@ -73,7 +72,7 @@ li:hover {
   background-color: rgb(180, 10, 10);
 }
 
-/* Блок с историей действий */
+/* Блок с историей действий
 
 #historyDiv {
   flex-grow: 1;
@@ -110,4 +109,4 @@ li:hover {
 
 .rotate {
   transform: scale(1, -1) translateX(-100%);
-}
+} */

@@ -76,7 +76,11 @@ fetch("./problems.json")
           instructionsList.appendChild(instructionsItem);
         });
 
+        const h1 = document.createElement("h1");
+        h1.textContent = li.textContent;
+
         center.innerHTML = null;
+        center.appendChild(h1);
         center.appendChild(nextStepList);
         center.appendChild(instructionsList);
       });
