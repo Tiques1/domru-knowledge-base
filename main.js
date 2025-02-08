@@ -85,14 +85,48 @@ fetch("./problems.json")
 
 /* История */
 
-document.getElementsByClassName("history-btn")[0].onclick = function () {
-  const elem = document.getElementById("historyDiv");
-  const btn = document.getElementsByClassName("history-btn");
-  if (elem.classList.contains("hidden")) {
-    elem.classList.remove("hidden");
-    btn[0].classList.add("rotate");
-  } else {
-    document.getElementById("historyDiv").classList.add("hidden");
-    btn[0].classList.remove("rotate");
-  }
-};
+// document.querySelectorAll("#buttons button")[0].onclick = function () {
+//   const elem = document.getElementById("historyDiv");
+//   const btn = document.getElementsByClassName("history-btn");
+//   if (elem.classList.contains("hidden")) {
+//     elem.classList.remove("hidden");
+//     // btn[0].classList.add("rotate");
+//   } else {
+//     document.getElementById("historyDiv").classList.add("hidden");
+//     // btn[0].classList.remove("rotate");
+//   }
+// };
+
+document.querySelectorAll("#buttons button").forEach((el) =>
+  el.addEventListener("click", (e) => {
+    document.querySelectorAll(".sidebar").forEach((sb) => {
+      if (sb.getAttribute("id") === e.target.getAttribute("data-sidebar")) {
+        if (sb.classList.contains("hidden")) {
+          sb.classList.remove("hidden");
+        } else {
+          sb.classList.add("hidden");
+        }
+      } else {
+        sb.classList.add("hidden");
+      }
+    });
+  })
+);
+
+/* Часики */
+
+function digitalClock() {
+  var date = new Date();
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
+  //* добавление ведущих нулей */
+  if (hours < 10) hours = "0" + hours;
+  if (minutes < 10) minutes = "0" + minutes;
+  if (seconds < 10) seconds = "0" + seconds;
+  document.getElementById("clock").innerHTML =
+    hours + ":" + minutes + ":" + seconds;
+  setTimeout("digitalClock()", 1000);
+}
+
+digitalClock();

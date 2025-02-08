@@ -25,15 +25,20 @@
         <ul id="list"></ul>
       </div>
 
-      <button class="history-btn rotate"></button>
+      <div id="buttons">
+        <button class="history-btn selector" data-sidebar="historyDiv"></button>
+        <button class="clock selector" data-sidebar="clock"></button>
+      </div>
 
-      <div id="historyDiv">
+      <div id="historyDiv" class="sidebar">
         <p>История</p>
         <ul id="historyList" class="ulHistory" style="list-style-type: decimal">
           <li data-file="link.html" data-option="1">Нет линка</li>
           <li data-file="link.html" data-option="1">Нет линка</li>
         </ul>
       </div>
+
+      <div id="clock" class="sidebar"></div>
     </div>
   </body>
 

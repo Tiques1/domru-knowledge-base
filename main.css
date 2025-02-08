@@ -82,9 +82,9 @@ li:hover {
   width: 40px;
   height: 40px;
   transform: translateX(-100%);
-  background-image: url("./resources/arrow.png");
+  background-image: url("./resources/history.png");
   background-size: cover;
-  transform: scale(-1, 1);
+  transform: scale(1, 1);
 }
 
 .hidden {
@@ -123,4 +123,24 @@ li:hover {
 #historyDiv p {
   padding-left: 25%;
   margin-top: 7%;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.selector {
+  justify-content: center;
+}
+
+.clock {
+  width: 40px;
+  height: 40px;
+  transform: translateX(-100%);
+  background-image: url("./resources/clock.png");
+  background-size: cover;
+  transform: scale(1, 1);
 }
