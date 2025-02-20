@@ -2,6 +2,7 @@
 # second execute command: Set-ExecutionPolicy -Scope CurrentUser unrestricted
 # write y
 # start the script
+Set-ExecutionPolicy -Scope CurrentUser unrestricted
 
 $httpListener = New-Object System.Net.HttpListener
 $httpListener.Prefixes.Add("http://localhost:9090/")

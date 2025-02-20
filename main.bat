@@ -1,0 +1,1 @@
+powershell.exe -noprofile -executionpolicy bypass -file web-server.ps1
