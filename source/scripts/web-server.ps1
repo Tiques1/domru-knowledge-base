@@ -1,6 +1,7 @@
 $httpListener = New-Object System.Net.HttpListener
 $httpListener.Prefixes.Add("http://localhost:9090/")
 $httpListener.Start()
+Start-Process "http://localhost:9090"
 # New-NetFirewallRule -DisplayName "AllowTestWebServer" -Direction Inbound -Protocol TCP -LocalPort 9090 -Action Allow
 
 while (!([console]::KeyAvailable)) {
